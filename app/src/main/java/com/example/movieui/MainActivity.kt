@@ -1,11 +1,13 @@
 package com.example.movieui
 
+import AppNavigator
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.rememberNavController
-import com.example.movieui.core.route.AppRoute
 import com.example.movieui.core.theme.MovieUITheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
@@ -25,9 +27,10 @@ class MainActivity : ComponentActivity() {
             )
 
             MovieUITheme {
-                /// main navigation
                 val navController = rememberNavController()
-                AppRoute.GenerateRoute(navController = navController)
+                Surface(color = MaterialTheme.colors.background) {
+                    AppNavigator(navController)
+                }
             }
         }
     }

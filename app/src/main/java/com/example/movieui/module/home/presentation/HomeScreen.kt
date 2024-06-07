@@ -18,7 +18,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.lerp
 import androidx.navigation.NavHostController
 import com.example.movieui.R
 import com.example.movieui.core.route.AppRouteName
@@ -33,7 +32,6 @@ import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.calculateCurrentOffsetForPage
 import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
 import kotlin.math.absoluteValue
 
 @Composable
@@ -101,7 +99,7 @@ fun HomeScreen(
             }
             Spacer(modifier = Modifier.height(16.dp))
             NowPlayingMovie { movie ->
-                navController.navigate("${AppRouteName.Detail}/${movie.id}")
+                navController.navigate("${AppRouteName.DetailFilm}/${movie.id}")
             }
             Spacer(modifier = Modifier.height(16.dp))
             Row(
